@@ -3,7 +3,7 @@ var money=CurrentAccount(12345674,"WangariMary",200.5)
     money.deposit(10000.2)
    money.withdraw(2000.2)
 
-//  println((fruit("pinnaple"))
+ println(fruit("pinnaple"))
 }
 
 
@@ -61,8 +61,21 @@ class SavingAccount(var accountnumber:Int,var acountname:String,var balance:Doub
 //other. Write a function that takes in a product and uses a when
 //statement to assign each product to a list based on its category
 //(3 points)
-//data class (var name:String,var weight:Double,var price:Int,var category:String)
+data class Product(var name:String,var weight:Double,var price:Int,var category:String)
+fun organize (product:Product): List<String> {
+    var grocery = mutableListOf<String>()
+    var hygiene = mutableListOf<String>()
+    var other = mutableListOf<String>()
+    when (product.category){
+        "groceryy items" -> println(grocery.add(product.name))
+        "hygiene items" -> println(hygiene.add(product.name))
+        "other items" -> println(other.add(product.name))
 
+    }
+    return grocery
+    return hygiene
+    return other
+}
 
 //4.Write a function that given a string returns a string composed of only
 //the characters in even indices. For example given “banana” it will return bnn (2points)
@@ -80,3 +93,6 @@ class SavingAccount(var accountnumber:Int,var acountname:String,var balance:Doub
         return name
 
     }
+
+    }
+
